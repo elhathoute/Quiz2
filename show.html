@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- {% load static %} -->
+  <title>Course Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="show.css">
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image is-4by3">
+            <!-- {% with 'image/'|add:course.image as pdf %} -->
+            <img src="img_1.jpg" alt="Course Image">
+            <!-- {% endwith %} -->
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <!-- <p class="title is-4">Course Title: {{ course.title }}</p> -->
+              <p class="title is-4">Course Title: Java</p>
+              <!-- <p class="subtitle is-6">Created_at: {{ course.created_at | date }}</p> -->
+              <p class="subtitle is-6">Created_at: 12/12/2023</p>
+            </div>
+          </div>
+          <div class="content">
+            <!-- <p>Course Description: {{ course.description }}</p> -->
+            <p>Course Description: description of Course</p>
+            <br>
+            <div class="buttons">
+              <a class="button is-primary" target="_blank" href="https://www.youtube.com/watch?v={{ course.video }}">
+                <span class="icon">
+                  <i class="fas fa-play"></i>
+                </span>
+                <span>Watch Video</span>
+              </a>
+              <a class="button is-link" href="/static/pdf/{{ course.pdf }}">
+                <span class="icon">
+                  <i class="fas fa-download"></i>
+                </span>
+                <span>Download PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- <p class="title is-4">Exam: {{ exam.title }} </p> -->
+          <p class="title is-4">Exam: Exam python</p>
+          <ol class="media-content pl-5">
+
+          <!-- {% for key, value in qcm %} -->
+            
+            <!-- <li class="title is-4">{{ key }} -->
+              <li class="title is-4">Question 1?
+            
+            <ol style="margin:10px;font-size: 15px;margin: 20px;">
+              <!-- {% for x in value %} -->
+                <!-- <li><input type="checkbox" class="answer" value="{{ x }}"> &nbsp;{{ x }}</li> -->
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 1</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 2</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 3</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 4</li>
+              <!-- {% endfor %} -->
+            </ol>
+            </li>
+          <!-- {% endfor %} -->
+
+          <li class="title is-4">Question 2?
+            
+            <ol style="margin:10px;font-size: 15px;margin: 20px;">
+              <!-- {% for x in value %} -->
+                <!-- <li><input type="checkbox" class="answer" value="{{ x }}"> &nbsp;{{ x }}</li> -->
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 1</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 2</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 3</li>
+                <li><input type="checkbox" class="answer" value="{{ x }}"> Option 4</li>
+              <!-- {% endfor %} -->
+            </ol>
+            </li>
+        </ol>
+
+          <button onclick="get_score()">Done</button>
+          <p id="score"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    correct = [ {% for x in correct %}
+    {% if forloop.counter != correct_length  %}
+    "{{ x }}",
+    {% else %}
+    "{{ x }}"
+    {% endif %}
+    
+    {% endfor %} ]
+    function get_score (){
+      answers = document.getElementsByClassName('answer');
+      selected_options = []
+      console.log(answers)
+      for(let i= 0; i< answers.length; i++){  
+          console.log(answers[i])
+        if (answers[i].checked)
+          selected_options.push(answers[i].defaultValue)
+        }
+       cpt= 0
+      for(let i= 0; i< selected_options.length; i++){
+        console.log(selected_options[i])
+        if (correct.includes(selected_options[i]))
+          {
+            cpt ++
+            console.log(correct.includes(selected_options[i]))
+          }
+      }
+      console.log(selected_options)
+      console.log(correct)
+      document.getElementById("score").innerHTML = "Your score is " + ((cpt / answers.length) * 100).toFixed(2) + "%";
+    }
+  </script>
+ 
+</body>
+</html>

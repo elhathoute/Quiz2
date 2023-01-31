@@ -1,0 +1,110 @@
+Custom Styles
+
+/* Change the font for the entire page */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+.media-content{
+    font-family: cursive;
+    margin-left: 320px;
+    margin-right: 380px;
+    border: 4px solid white;
+    border-width: 10px;
+
+
+}
+.title.is-4{
+    font-family: cursive;
+    color: white;
+    font-family: Georgia, serif;
+    margin-left: 80px;
+
+}
+.subtitle.is-6{
+    margin: 10px 50px;
+    margin-left: 20px;
+
+}
+.media-content.pl-5{
+    margin-left: 290px;
+    margin-right: 320px;
+
+}
+.content{
+    color:white;
+    margin-left: 350px;
+    font-family: cursive;
+    font-size: 20px;
+}
+.buttons{
+    margin-left: 30px;
+}
+.subtitle.is-6{
+    margin-left: 100px;
+    color: aqua;
+
+}
+.card {
+    background-color: #060404;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(43, 18, 18);
+}
+
+ 
+.image.is-4by3 {
+    padding: 10%;
+    width: 30%;
+    height: 40%;
+    margin-left: 370px;
+    margin-top: 60px;
+    border-radius: 30px;
+    clip-path: circle(50% at 50% 50%);
+    border-top: 8px solid rgb(255, 0, 132);
+    border-bottom: 8px solid rgb(128, 0, 105);
+}
+
+
+.button.is-primary {
+    background-color: #bc1a9c;
+}
+.button.is-link {
+    background-color: #bc1a9c;
+}
+
+.button:hover {
+    color: rgb(46, 36, 125);
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+}
+
+/* Add a margin to the top of the exam questions */
+.media-content.pl-5 {
+    margin-top: 40px;
+    padding-left: 30px;
+    
+}
+
+button {
+    background-color: rgb(0, 251, 255);
+    letter-spacing: 5px;
+    cursor: pointer;
+    border-radius: 100px;
+    border: 5px solid #15f4ee;
+    transition: 1.5s;
+    text-transform: uppercase;
+    font-family: poppins;
+    font-weight: 400;
+    margin-left: 500px;
+    margin-top: 20px;
+
+  }
+  button:hover {
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+}
+#score {
+    color: rgb(255, 0, 217);
+    margin-left: 475px;
+    margin-top: 10px;
+  }
+
