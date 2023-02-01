@@ -1,0 +1,17 @@
+body{
+    background: hwb(223 75% 0%);
+    font-family: 'Comfortaa', cursive;
+    color: #fff;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: points;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.container{
+
+}
